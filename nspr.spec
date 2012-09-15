@@ -1,7 +1,7 @@
 Summary:	Netscape Portable Runtime (NSPR)
 Name:		nspr
 Version:	4.9.2
-Release:	1
+Release:	2
 Epoch:		1
 License:	MPL v1.1 or GPL v2+ or LGPL v2.1+
 Group:		Libraries
@@ -67,8 +67,8 @@ rm $RPM_BUILD_ROOT%{_libdir}/*.a
 %clean
 rm -rf $RPM_BUILD_ROOT
 
-%post   -p /sbin/ldconfig
-%postun -p /sbin/ldconfig
+%post   -p /usr/sbin/ldconfig
+%postun -p /usr/sbin/ldconfig
 
 %files
 %defattr(644,root,root,755)

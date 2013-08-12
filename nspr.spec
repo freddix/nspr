@@ -1,13 +1,14 @@
 Summary:	Netscape Portable Runtime (NSPR)
 Name:		nspr
 Version:	4.10
-Release:	1
+Release:	2
 Epoch:		1
 License:	MPL v1.1 or GPL v2+ or LGPL v2.1+
 Group:		Libraries
 Source0:	ftp://ftp.mozilla.org/pub/mozilla.org/nspr/releases/v%{version}/src/%{name}-%{version}.tar.gz
 # Source0-md5:	f5466def95726b3c900d8a0227bdd034
 Patch0:		%{name}-acfix.patch
+Patch1:		%{name}-pc.patch
 URL:		http://www.mozilla.org/projects/nspr/
 BuildRequires:	autoconf
 BuildRequires:	automake
@@ -29,6 +30,7 @@ Header files for the NSPR library from Netscape.
 %prep
 %setup -q
 %patch0 -p1
+%patch1 -p1
 
 # Win32-specific, requires autoconf2.13
 %{__rm} nspr/build/autoconf/acwinpaths.m4 \
@@ -36,8 +38,6 @@ Header files for the NSPR library from Netscape.
 
 %build
 cd nspr
-
-cp -f /usr/share/automake/config.sub build/autoconf
 %{__autoconf}
 %configure \
 	--disable-debug				\

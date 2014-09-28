@@ -1,12 +1,13 @@
+# based on PLD Linux spec git://git.pld-linux.org/packages/.git
 Summary:	Netscape Portable Runtime (NSPR)
 Name:		nspr
-Version:	4.10.6
-Release:	2
+Version:	4.10.7
+Release:	1
 Epoch:		1
 License:	MPL v2.0 or GPL v2+ or LGPL v2.1+
 Group:		Libraries
 Source0:	ftp://ftp.mozilla.org/pub/mozilla.org/nspr/releases/v%{version}/src/%{name}-%{version}.tar.gz
-# Source0-md5:	6ab81e8d508457905223eaf4ed0a973b
+# Source0-md5:	6e06919e4b56efed501e05d8b45ec10e
 Patch0:		%{name}-pc.patch
 URL:		http://www.mozilla.org/projects/nspr/
 BuildRequires:	autoconf
@@ -34,15 +35,13 @@ Header files for the NSPR library from Netscape.
 cd nspr
 %{__autoconf}
 %configure \
-	--disable-debug				\
+	--disable-debug	    \
 %ifarch %{x8664}
-	--enable-64bit				\
+	--enable-64bit	    \
 %endif
-	--enable-ipv6				\
-	--enable-optimize="%{rpmcflags}"	\
-	--includedir=%{_includedir}/nspr	\
-	--with-mozilla				\
-	--with-pthreads
+	--enable-ipv6	    \
+	--enable-optimize   \
+	--includedir=%{_includedir}/nspr
 %{__make}
 
 %install

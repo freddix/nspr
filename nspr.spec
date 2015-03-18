@@ -1,13 +1,13 @@
 # based on PLD Linux spec git://git.pld-linux.org/packages/.git
 Summary:	Netscape Portable Runtime (NSPR)
 Name:		nspr
-Version:	4.10.7
+Version:	4.10.8
 Release:	1
 Epoch:		1
 License:	MPL v2.0 or GPL v2+ or LGPL v2.1+
 Group:		Libraries
 Source0:	ftp://ftp.mozilla.org/pub/mozilla.org/nspr/releases/v%{version}/src/%{name}-%{version}.tar.gz
-# Source0-md5:	6e06919e4b56efed501e05d8b45ec10e
+# Source0-md5:	8d7c5bd0a5b0a7d0e705be66479030a0
 Patch0:		%{name}-pc.patch
 URL:		http://www.mozilla.org/projects/nspr/
 BuildRequires:	autoconf
